@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<title>Add Region</title>
+	<!-- CSS -->
+	<h:outputStylesheet library="css" name="style.css"></h:outputStylesheet>
+
+	<!--  -->
+
+</h:head>
+
+<h:body>
+	<h3>Add Region:</h3>
+	<h:form id="addRegionForm">
+		<h:messages globalOnly="true" style="color:red;" />
+		
+Country Code:<h:inputText value="#{region.code}" id="invalidCode" />
+		<h:message for="invalidCode" style="color:red;"></h:message>
+		<br />
+		<br />
+Region Code:<h:inputText value="#{region.regCode}"
+			id="invalidRegionCode" />
+		<h:message for="invalidRegionCode" style="color:red;"></h:message>
+		<br />
+		<br />
+Name:<h:inputText value="#{region.regName}" id="invalidRegName" />
+		<h:message for="invalidRegName" style="color:red;"></h:message>
+		<br />
+		<br />
+Description:<h:inputText value="#{region.regDescription}" />
+		<br />
+		<br />
+		<h:commandButton value="Add"
+			action="#{regionController.addRegion(region)}"></h:commandButton>
+		<br />
+		<br />
+		<h:link value="Home" outcome="index" />
+		<br />
+		<h:link value="Regions" outcome="list_region" />
+	</h:form>
+</h:body>
+
+
+</html>

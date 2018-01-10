@@ -1,0 +1,33 @@
+.table{
+	border-bottom:1px solid gray;
+	font-family: Tahama, Verdana, Segoe, sans-serif;
+}
+
+.message {
+	color: red;
+}
+
+.table-header {
+	background-color: navy;
+	color: white;
+	font-family: verdana;
+	font-size: 100%;
+	text-align: left;
+}
+
+.table-odd-row {
+	background-color: lightblue;
+}
+
+.table-even-row {
+	background-color: skyblue;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.body { width: 900px; font:verdana-14px }
+
+
+	    

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<title>List Heads of State</title>
+	<!-- CSS -->
+	<h:outputStylesheet library="css" name="style.css"></h:outputStylesheet>
+</h:head>
+
+<h:body>
+	<h:button value="Add Head of State" outcome="add_head_of_state.xhtml" />
+	<br />
+	<br />
+
+	<h:dataTable value="#{headOfStateController.headsOfState}"
+		var="headOfState" styleClass="table" headerClass="table-header"
+		rowClasses="table-odd-row,table-even-row">
+
+		<f:metadata>
+			<f:event type="preRenderView"
+				listener="#{headOfStateController.loadHeadsOfState()}" />
+		</f:metadata>
+
+		<h:column>
+			<f:facet name="header">Country Code</f:facet>
+			 #{headOfState._id}
+		</h:column>
+		<h:column>
+			<f:facet name="header">Head of State</f:facet>
+			 #{headOfState.headOfState}
+		</h:column>
+		<h:column>
+			<f:facet name="header">Action</f:facet>
+			<h:form>
+				<h:commandLink value="Delete "
+					onclick="if (!confirm('Delete this Head Of State?')) return false"
+					action="#{headOfStateController.deleteHeadOfState(headOfState)}" />
+			</h:form>
+		</h:column>
+
+
+	</h:dataTable>
+
+	<br />
+	<h:link value="Home" outcome="index" />
+
+</h:body>
+</html>
+

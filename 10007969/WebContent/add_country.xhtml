@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<title>Add Country</title>
+	<!-- CSS -->
+	<h:outputStylesheet library="css" name="style.css"></h:outputStylesheet>
+
+	<!--  -->
+
+</h:head>
+
+<h:body>
+	<h3>Add Country:</h3>
+	<h:form id="addCountryForm">
+		<h:messages globalOnly="true" style="color:red;" />
+		
+Code:<h:inputText value="#{country.code}" id="invalidCountryCode" />
+		<h:message for="invalidCountryCode" style="color:red;"></h:message>
+		<br />
+		<br />
+Name:<h:inputText value="#{country.name}" id="invalidCountryName" />
+		<h:message for="invalidCountryName" style="color:red;"></h:message>
+		<br />
+		<br />
+Details:<h:inputText value="#{country.details}" />
+		<br />
+		<br />
+		<h:commandButton value="Add"
+			action="#{countryController.addCountry(country)}"></h:commandButton>
+		<br />
+		<h:link value="Home" outcome="index" />
+		<br />
+		<h:link value="Countries" outcome="list_country" />
+	</h:form>
+</h:body>
+
+
+</html>

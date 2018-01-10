@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<title>Update Heads of State</title>
+	<!-- CSS -->
+	<h:outputStylesheet library="css" name="style.css"></h:outputStylesheet>
+
+	<!--  -->
+
+</h:head>
+
+<h:body>
+	<h3>Update Heads of State:</h3>
+	<h:form>
+Code:<h:inputText value="#{HeadOfStateController.toUpdate._id}"
+			readonly="true" />
+		<br />
+		<br />
+Name:<h:inputText value="#{HeadOfStateController.toUpdate.headOfState}" />
+		<br />
+		<br />
+
+		<h:commandButton value="Update"
+			action="#{HeadOfStateController.updateheadOfState(HeadOfStateController.toUpdate)}"></h:commandButton>
+		<!-- headOfStateController.toUpdate is the private variable in the countryController class that we brought to this page. -->
+	</h:form>
+	<h:link value="Home" outcome="index" style="padding-right:10px" />
+	<h:link value="Countries" outcome="list_head_of_State" />
+
+</h:body>
+
+
+</html>

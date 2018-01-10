@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<title>Cities</title>
+	<h:outputStylesheet name="css/style.css" />
+	<f:metadata>
+		<f:event type="preRenderView"
+			listener="#{cityController.loadCities()}" />
+	</f:metadata>
+
+
+</h:head>
+<h:body>
+
+
+	<!-- hCommandButton - action / button - outcome -->
+	<h:button value="Add City" outcome="add_city.xhtml" />
+	<br />
+	<br />
+
+	<h:dataTable value="#{cityController.cities}" var="city"
+		styleClass="table" headerClass="table-header"
+		rowClasses="table-odd-row,table-even-row">
+		<h:column>
+			<f:facet name="header">CityCode</f:facet>
+			<h:outputText value="#{city.cityCode}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">Country Code</f:facet>
+			<h:outputText value="#{city.coCode}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">Region Code</f:facet>
+			<h:outputText value="#{city.regCode}" />
+		</h:column>
+
+		<h:column>
+			<f:facet name="header">City Name</f:facet>
+			<h:outputText value="#{city.cityName}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">Population</f:facet>
+			<h:outputText value="#{city.population}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">By the sea</f:facet>
+			<h:outputText value="#{city.isCoastal}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">Area</f:facet>
+			<h:outputText value="#{city.areaKM}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">Action</f:facet>
+			<h:form>
+				<h:commandLink value="All Details"
+					action="#{cityController.getDetailsFor(city)}" />
+			</h:form>
+		</h:column>
+	</h:dataTable>
+	<h:link value="home" outcome="index" />
+</h:body>
+</html>

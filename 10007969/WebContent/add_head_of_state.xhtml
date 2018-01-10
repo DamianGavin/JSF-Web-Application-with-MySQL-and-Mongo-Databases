@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<title>Add Head of State</title>
+	<!-- CSS -->
+	<h:outputStylesheet library="css" name="style.css"></h:outputStylesheet>
+
+	<!--  -->
+
+</h:head>
+
+<h:body>
+	<h:commandButton value="Add Head of state"
+		action="#{headOfStateController.addHeadOfState(headOfState)}"></h:commandButton>
+	<h:form id="addHeadOfStateForm">
+		<h:messages globalOnly="true" style="color:red;" />
+		
+Country Code:<h:inputText value="#{headOfState._id}" />
+		<br />
+		<br />
+Name:<h:inputText value="#{headsOfState.headOfState}" />
+		<br />
+		<br />
+
+
+		<br />
+		<h:link value="Home" outcome="index" />
+		<br />
+		<h:link value="Heads of State" outcome="list_heads_of_state" />
+	</h:form>
+</h:body>
+
+
+</html>

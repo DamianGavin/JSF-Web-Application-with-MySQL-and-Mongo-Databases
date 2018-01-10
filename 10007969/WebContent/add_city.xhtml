@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<title>Add City</title>
+	<h:outputStylesheet library="css" name="style.css"></h:outputStylesheet>
+</h:head>
+
+<h:body>
+	<h:messages globalOnly="true" style="color:red;" />
+	<h2>Add City</h2>
+	<h:form id="addCityform">
+	
+	   City Code: <h:inputText value="#{city.cityCode}"
+			id="invalidCityCode" />
+		<h:message for="invalidCityCode" style="color:red;"></h:message>
+		<br />
+		<br />
+	    Country Code: <h:inputText value="#{city.coCode}"
+			id="invalidCoCode" />
+		<h:message for="invalidCoCode" style="color:red;"></h:message>
+		<br />
+		<br />
+		
+	    Region Code: <h:inputText value="#{city.regCode}"
+			id="invalidRegCode" />
+		<h:message for="invalidRegCode" style="color:red;"></h:message>
+		<br />
+		<br />
+	    City Name: <h:inputText value="#{city.cityName}"
+			id="invalidCityName" />
+		<h:message for="invalidCityName" style="color:red;"></h:message>
+		<br />
+		<br />
+	    Population: <h:inputText value="#{city.population}" />
+		<br />
+		<br />
+	   By The Sea: <h:selectOneMenu value="#{city.isCoastal}">
+			<f:selectItem itemValue="true" itemLabel="True" />
+			<f:selectItem itemValue="false" itemLabel="False" />
+		</h:selectOneMenu>
+		<br />
+		<br />
+	    Area(KM): <h:inputText value="#{city.areaKM}" />
+		<br />
+		<br />
+		<h:commandButton value="Add" action="#{cityController.addCity(city)}"></h:commandButton>
+	</h:form>
+	<h:link value="Home" outcome="index" style="padding-right:10px" />
+	<h:link value="Countries" outcome="list_country" />
+
+</h:body>
+</html>
